@@ -1,7 +1,7 @@
-## Crawler tool
-https://github.com/rarcega/instagram-scraper
+## Crawler
+Main tool used: https://github.com/rarcega/instagram-scraper
 
-## Running the crawler
+#### Running the crawler
 The step is not really automated but since we only need to get the posts once, so I will leave it like this for now
 ```bash
 docker build -t instagram-crawler
@@ -14,3 +14,6 @@ docker ps # get container id
 docker cp <CONTAINER_ID>:/usr/src/instagram-feed/crawler/data/9gag.json  ./data
 # change 9gag to any other user you have scraped
 ```
+
+#### TODO
+* Automate crawler
