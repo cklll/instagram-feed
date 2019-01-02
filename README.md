@@ -1,21 +1,12 @@
 # instagram-feed
+This is an web application that serve pre-crawled data from Instagram.
 
-## Web application
-```bash
-docker-compose up -d --build
-```
-For Docker for Mac, it should be serving at http://localhost:3000/
+Consists of 3 main parts:
+* Api server (Express.js)
+* Front end web application (Next.js)
+* crawler (using a python package instagram-scraper)
 
-## Test
-```bash
-docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint"
-```
-
-## Api Server
-TODO
-
-## Crawler
-Refer to https://github.com/cklll/instagram-feed/tree/master/crawler
+To start using them, refer to the `README.md` in each of the directories.
 
 ## TODO
-CI for testing
+* CI (e.g. Travis CI) for testing / deployment
