@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  api:
+    container_name: api
+    build: .
+    command: sh -c "yarn --frozen-lockfile && npm start"
+
+    ports:
+      - '3010:3010'
+
+    volumes:
+      - .:/usr/src/instagram-feed/api
