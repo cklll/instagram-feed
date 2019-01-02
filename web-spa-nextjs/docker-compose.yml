@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web_spa_nextjs:
+    container_name: web_spa_nextjs
+    build: .
+    command: sh -c "yarn --frozen-lockfile && yarn dev"
+
+    ports:
+      - '3000:3000'
+
+    volumes:
+      - .:/usr/src/instagram-feed/web-spa-nextjs
