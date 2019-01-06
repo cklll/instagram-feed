@@ -1,5 +1,5 @@
 const esClient = require('../client');
-const postMappings = require('../mappings/post');
+const postMappings = require('../mappings/post').default;
 const postData = require('../seed/data.json');
 
 (async () => {
@@ -31,6 +31,7 @@ const postData = require('../seed/data.json');
         acc.push({
             ...item,
             id: Number(item.id),
+            hash_tags: undefined,
         });
         return acc;
      }, []);
@@ -39,7 +40,7 @@ const postData = require('../seed/data.json');
     });
 
     if (resp.errors) {
-        resp.items.filter(Boolean(item.index.error)).forEach((item) => {
+        resp.items.filter(item => Boolean(item.index.error)).forEach((item) => {
             console.log(item.index.error);
         });
         throw new Error('UNKNOWN ERROR');
