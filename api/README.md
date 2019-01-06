@@ -22,5 +22,5 @@ TODO
 
 #### TODO
 * Eslint
-* nodemon
 * redis
+* prod build

@@ -25,6 +25,4 @@ const mappings = {
     }
 };
 
-module.export = {
-    mappings,
-};
+exports.default= mappings;
