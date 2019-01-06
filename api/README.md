@@ -4,9 +4,9 @@ docker-compose up -d --build
 ```
 
 For Docker for Mac, check the following service is running,
-`kibana` at http://localhost:5601/
-`elasticsearch` at http://localhost:9200/
-`api` at http://localhost:3010/
+* `kibana` at http://localhost:5601/
+* `elasticsearch` at http://localhost:9200/
+* `api` at http://localhost:3010/
 
 #### Load seed data
 Copy the crawled data
