@@ -8,6 +8,11 @@ const getMediaType = (url) => {
     return null;
 };
 
+const setStatePromise = (component, state) => (
+    new Promise(resolve => component.setState(state, resolve))
+);
+
 export default {
     getMediaType,
+    setStatePromise,
 };
