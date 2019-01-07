@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
+    "elasticsearch": "^15.2.0",
+    "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "lodash": "^4.17.11",
     "next": "^7.0.2",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
@@ -12,10 +17,11 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0"
+    "eslint-plugin-react": "^7.11.0",
+    "nodemon": "^1.18.9"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon -L server.js",
     "build": "next build",
     "start": "next build && next start",
     "lint": "eslint pages"
