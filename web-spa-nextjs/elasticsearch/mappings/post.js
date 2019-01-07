@@ -13,16 +13,16 @@ const mappings = {
             },
             media_urls: {
                 type: 'text',
-                    fields: {
+                fields: {
                     keyword: {
                         type: 'keyword',
-                        ignore_above: 256
-                    }
-                }
-             },
+                        ignore_above: 256,
+                    },
+                },
+            },
             username: { type: 'text' },
-        }
-    }
+        },
+    },
 };
 
-exports.default= mappings;
+exports.default = mappings;
