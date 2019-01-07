@@ -14,5 +14,10 @@ module.exports = {
         "react/jsx-indent-props": ["error", 4],
         "react/jsx-filename-extension": 0,
         "jsx-a11y/media-has-caption": ["off"],
+        "jsx-a11y/anchor-is-valid": [ "error", {
+            "components": ["Link"],
+            "specialLink": ["hrefLeft", "hrefRight"],
+            "aspects": ["invalidHref", "preferButton"],
+        }],
     },
 };

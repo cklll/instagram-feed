@@ -25,6 +25,6 @@
     "dev": "nodemon -L server.js",
     "build": "next build",
     "start": "next build && next start",
-    "lint": "eslint pages"
+    "lint": "eslint . --ext .js"
   }
 }
