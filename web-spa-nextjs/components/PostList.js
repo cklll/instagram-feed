@@ -52,7 +52,7 @@ class PostList extends React.PureComponent {
         const postComponents = posts.map((post) => {
             const mediaComponents = post.media_urls
                 .map(url => (
-                    <Media url={url} />
+                    <Media key={url} url={url} />
                 ));
             return (
                 <section key={post.id}>
