@@ -18,7 +18,7 @@ def run():
             for post_data in posts_data:
                 processed_data.append({
                     'like_count': post_data['edge_media_preview_like']['count'],
-                    'comment_count': post_data['edge_media_preview_like']['count'],
+                    'comment_count': post_data['edge_media_to_comment']['count'],
                     'caption': post_data['edge_media_to_caption']['edges'][0]['node']['text'],
                     'id': post_data['id'],
                     'short_code': post_data['shortcode'],
