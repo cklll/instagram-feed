@@ -6,6 +6,7 @@ import api from '../services/api';
 import utils from '../utils';
 
 import Media from './Media';
+import Caption from './Caption';
 
 class PostList extends React.PureComponent {
     constructor(props) {
@@ -85,7 +86,7 @@ class PostList extends React.PureComponent {
                             <span className="comment-count">{ post.comment_count }</span>
                         </p>
                     </div>
-                    <p>{ post.caption }</p>
+                    <Caption caption={post.caption} />
                 </section>
             );
         });

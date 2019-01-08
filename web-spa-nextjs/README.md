@@ -30,3 +30,5 @@ docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint
 #### TODO
 * Change `web-spa-nextjs` to something simpler e.g. `web-app`, `spa` since I think it is already sufficient to understand
 * UI
+* Create a config file (e.g. Instagram url prefix)
+* Caption \n is not replaced with <br>
