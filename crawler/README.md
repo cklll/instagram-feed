@@ -1,6 +1,8 @@
 ## Crawler
 Main tool used: https://github.com/rarcega/instagram-scraper
 
+Using docker is optional, you may use virtual environment or installing directly in the machine. Directly working in host machine will make moving the files easier.
+
 #### Build docker image
 ```bash
 docker build . -t instagram-crawler
