@@ -11,10 +11,8 @@ import Caption from './Caption';
 class PostList extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.lastLoadedPage = 1;
         this.state = {
             isLoading: false,
-            endOfPosts: false,
         };
     }
 
@@ -23,18 +21,20 @@ class PostList extends React.PureComponent {
             return {
                 posts: props.initialPosts,
                 sortType: props.sortType,
+                endOfPosts: false,
+                lastLoadedPage: 1,
             };
         }
         return null;
     }
 
     loadMorePosts = async () => {
-        this.lastLoadedPage += 1;
+        const { lastLoadedPage } = this.state;
         await utils.setStatePromise(this, {
             isLoading: true,
         });
         const { sortType } = this.state;
-        const newLoadedPosts = await api.getPosts(sortType, this.lastLoadedPage);
+        const newLoadedPosts = await api.getPosts(sortType, lastLoadedPage + 1);
         // TODO check if the new loaded post already exist if this.state.posts
         this.setState(prevState => ({
             posts: [
@@ -43,6 +43,7 @@ class PostList extends React.PureComponent {
             ],
             isLoading: false,
             endOfPosts: newLoadedPosts.length === 0,
+            lastLoadedPage: lastLoadedPage + 1,
         }));
     }
 

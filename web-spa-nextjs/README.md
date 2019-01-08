@@ -30,7 +30,7 @@ docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint
 
 
 #### TODO
-* UI (e.g. header, album)
+* UI (e.g. sticky header, album)
 * Production build, currently `yarn install` is using development config and `next build` is not used to optimized
 * Use css in js or sass, include normalize.css, bootstrap, etc
 * Create a config file (e.g. Instagram url prefix)
