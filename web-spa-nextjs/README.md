@@ -3,12 +3,14 @@ This is the web application part of the project that display the crawled data.
 
 #### Develop
 ```bash
-docker-compose up -d --build
+docker-compose up --build --force-recreate
 ```
 For Docker for Mac, check the following service is running,
 * `kibana` at http://localhost:5601/
 * `elasticsearch` at http://localhost:9200/
 * `web app` at http://localhost:3000/
+
+If http://localhost:3000/ is not responding, it is probably elasticsearch takes some time to start and the server is not able to connect it during start up. Current workaround is to to open `server.js` or other `.js` file and save it again to trigger nodemon to reload the server
 
 #### Load seed data
 Copy the crawled data
@@ -28,7 +30,8 @@ docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint
 
 
 #### TODO
-* Change `web-spa-nextjs` to something simpler e.g. `web-app`, `spa` since I think it is already sufficient to understand
-* UI
+* UI (e.g. header, album)
 * Create a config file (e.g. Instagram url prefix)
 * Caption \n is not replaced with <br>
+* Use Nginx or CDN to serve static file (e.g. images and videos)
+* Change `web-spa-nextjs` to something simpler e.g. `web-app`, `spa` since I think it is already sufficient to understand

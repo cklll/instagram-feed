@@ -13,9 +13,7 @@ const Media = ({ url }) => {
                 controls
             >
                 <source src={url} type="video/mp4" />
-                {/* TODO: fallback to a sample video until instagram expired error is fixed */}
-                <source src="/instagram-videos/sample.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                The file is not found or your browser does not support the video tag.
             </video>
         );
     }

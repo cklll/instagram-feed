@@ -1,8 +1,8 @@
 const getMediaType = (url) => {
-    if (url.indexOf('mp4?') !== -1) {
+    if (url.endsWith('mp4')) {
         return 'MP4';
     }
-    if (url.indexOf('jpg?') !== -1) {
+    if (url.endsWith('jpg')) {
         return 'JPG';
     }
     return null;
