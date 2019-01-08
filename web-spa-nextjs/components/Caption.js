@@ -8,10 +8,11 @@ const Caption = ({ caption }) => {
     // TODO \n not replaced with <br />
     const splitCaptions = caption.split(masterRegex).filter(Boolean);
 
-    const captionWithLinked = splitCaptions.map((captionPart) => {
+    const captionWithLinked = splitCaptions.map((captionPart, index) => {
         if (hashTahRegex.test(captionPart)) {
             return (
-                <span>
+                // eslint-disable-next-line react/no-array-index-key
+                <span key={index}>
                     <a
                         // create a config for instagram url prefix
                         href={`https://www.instagram.com/explore/tags/${captionPart.slice(1)}/`}
@@ -25,7 +26,8 @@ const Caption = ({ caption }) => {
         }
         if (usernameRegex.test(captionPart)) {
             return (
-                <span>
+                // eslint-disable-next-line react/no-array-index-key
+                <span key={index}>
                     <a
                         href={`https://www.instagram.com/${captionPart.slice(1)}/`}
                         target="_blank"
@@ -37,7 +39,8 @@ const Caption = ({ caption }) => {
             );
         }
         return (
-            <span>
+            // eslint-disable-next-line react/no-array-index-key
+            <span key={index}>
                 { captionPart }
             </span>
         );

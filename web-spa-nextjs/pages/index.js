@@ -41,7 +41,7 @@ HomePage.getInitialProps = async ({ query }) => {
 };
 
 HomePage.propTypes = {
-    posts: PropTypes.arrayOf().isRequired,
+    posts: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     sortType: PropTypes.string.isRequired,
 };
 
