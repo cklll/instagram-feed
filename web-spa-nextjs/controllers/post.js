@@ -23,15 +23,23 @@ const getPosts = async (sortType = 'recent', page = 1) => {
 
     let esPostsResult = [];
     if (sortType === 'hot') {
-        // TODO sort by hot
         esPostsResult = await esClient.search({
             index: 'post',
             body: {
+                track_scores: true,
                 from: fromOffset,
                 size: PAGE_SIZE,
-                sort: [
-                    { taken_at: { order: 'asc' } },
-                ],
+                sort: {
+                    _script: {
+                        type: 'number',
+                        script: {
+                            lang: 'painless',
+                            // log(likeCount) + ((time_diff in second)/45000)
+                            source: 'Math.log10(doc["like_count"].value) + ((new Date().getTime()) - (doc["taken_at"].value.millis)) / 45000000',
+                        },
+                        order: 'desc',
+                    },
+                },
             },
         });
     } else {
