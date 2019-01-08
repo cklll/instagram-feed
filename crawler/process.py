@@ -16,6 +16,12 @@ def run():
             posts_data = json.load(json_file)
 
             for post_data in posts_data:
+                media_urls = []
+                for url in post_data['urls']:
+                    filename_from_url = url.split('?')[0].split('/')[-1]
+                    file_path = f'/resources/instagram/{filename_from_url}'
+                    media_urls.append(file_path)
+
                 processed_data.append({
                     'like_count': post_data['edge_media_preview_like']['count'],
                     'comment_count': post_data['edge_media_to_comment']['count'],
@@ -24,7 +30,7 @@ def run():
                     'short_code': post_data['shortcode'],
                     'hash_tags': post_data['tags'],
                     'taken_at': post_data['taken_at_timestamp'],
-                    'media_urls': post_data['urls'],
+                    'media_urls': media_urls,
                     'username': post_data['username'],
                 })
     
