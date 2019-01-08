@@ -6,15 +6,26 @@ import utils from '../utils';
 const Media = ({ url }) => {
     if (utils.getMediaType(url) === 'MP4') {
         return (
-            <video width="320" height="240" controls>
+            <video
+                className="post__media post__media--video"
+                width="320"
+                height="240"
+                controls
+            >
                 <source src={url} type="video/mp4" />
+                {/* TODO: fallback to a sample video until instagram expired error is fixed */}
+                <source src="/instagram-videos/sample.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
         );
     }
     if (utils.getMediaType(url) === 'JPG') {
         return (
-            <img src={url} alt={url} />
+            <img
+                className="post__media post__media--image"
+                src={url}
+                alt={url}
+            />
         );
     }
     return <p>UNKNOWN MEDIA TYPE</p>;

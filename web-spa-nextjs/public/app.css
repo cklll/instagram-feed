@@ -1,0 +1,57 @@
+/* TODO use scss/css in js */
+
+.nav__list-container {
+    text-align: center;
+}
+.nav__list-item {
+    display: inline-block;
+    margin: 0 20px;
+}
+.nav__list-item--active {
+    background-color: yellow;
+}
+
+main {
+    width: 1024px;
+    margin: 0 auto;
+}
+.post__title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post__username-link {
+    text-decoration: none;
+    font-size: 20px;
+}
+.post__taken-at-link {
+    text-decoration: none;
+    color: gray;
+    font-size: 16px;
+}
+.post__statistics-row {
+    display: flex;
+}
+.post__like-count-container {
+
+}
+.like-count__emoji {
+    color: red;
+}
+.like-count {
+    
+}
+.post__comment-count-container {
+    margin-left: 20px;
+}
+.comment-count__emoji {
+
+}
+.comment-count {
+
+}
+.post__media {
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+}

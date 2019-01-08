@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Head from 'next/head';
 
 import api from '../services/api';
 
@@ -11,6 +12,10 @@ class HomePage extends React.PureComponent {
         const { posts, sortType } = this.props;
         return (
             <React.Fragment>
+                <Head>
+                    <title>My Instagram Feed</title>
+                    <link rel="stylesheet" href="/app.css" />
+                </Head>
                 <Header activeSortType={sortType} />
                 <PostList
                     initialPosts={posts}
