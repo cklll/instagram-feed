@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import api from '../services/api';
 import utils from '../utils';
@@ -69,7 +70,7 @@ class PostList extends React.PureComponent {
                                 rel="noopener noreferrer"
                                 className="post__taken-at-link"
                             >
-                                { post.taken_at }
+                                { moment(post.taken_at * 1000).fromNow() }
                             </a>
                         </p>
                     </div>
