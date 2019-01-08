@@ -1,5 +1,5 @@
 ## Web application
-This is the both web application part of the project that display the crawled data.
+This is the web application part of the project that display the crawled data.
 
 #### Develop
 ```bash
