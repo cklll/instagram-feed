@@ -6,7 +6,3 @@ Consists of 2 main parts:
 * crawler (using a python package instagram-scraper)
 
 To start using them, refer to the `README.md` in each of the directories.
-
-## TODO
-* **Crawled video urls does not work with `URL signature expired` error**
-* CI (e.g. Travis CI) for testing / deployment
