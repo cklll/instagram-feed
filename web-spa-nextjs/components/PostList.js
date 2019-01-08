@@ -51,12 +51,40 @@ class PostList extends React.PureComponent {
                 ));
             return (
                 <section key={post.id}>
-                    <p>{ post.username }</p>
+                    <div className="post__title-row">
+                        <h2 className="post__username-title">
+                            <a
+                                href={`https://www.instagram.com/${post.username}/`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="post__username-link"
+                            >
+                                { post.username }
+                            </a>
+                        </h2>
+                        <p className="post__taken-at">
+                            <a
+                                href={`https://www.instagram.com/p/${post.short_code}/`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="post__taken-at-link"
+                            >
+                                { post.taken_at }
+                            </a>
+                        </p>
+                    </div>
                     { mediaComponents }
-                    { post.media_urls.map(url => <p>{ url }</p>) }
+                    <div className="post__statistics-row">
+                        <p className="post__like-count-container">
+                            <span className="like-count__emoji">Likes: </span>
+                            <span className="like-count">{ post.like_count }</span>
+                        </p>
+                        <p className="post__comment-count-container">
+                            <span className="comment-count__emoji">Comments: </span>
+                            <span className="comment-count">{ post.comment_count }</span>
+                        </p>
+                    </div>
                     <p>{ post.caption }</p>
-                    <p>{ post.comment }</p>
-                    <p>{ post.taken_at }</p>
                 </section>
             );
         });
