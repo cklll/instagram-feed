@@ -31,7 +31,10 @@ docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint
 
 #### TODO
 * UI (e.g. header, album)
+* Production build, currently `yarn install` is using development config and `next build` is not used to optimized
+* Use css in js or sass, include normalize.css, bootstrap, etc
 * Create a config file (e.g. Instagram url prefix)
 * Caption \n is not replaced with <br>
 * Use Nginx or CDN to serve static file (e.g. images and videos)
+* Redis to cache result
 * Change `web-spa-nextjs` to something simpler e.g. `web-app`, `spa` since I think it is already sufficient to understand

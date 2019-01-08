@@ -14,6 +14,7 @@ class PostList extends React.PureComponent {
         this.lastLoadedPage = 1;
         this.state = {
             isLoading: false,
+            endOfPosts: false,
         };
     }
 
@@ -41,11 +42,12 @@ class PostList extends React.PureComponent {
                 ...newLoadedPosts,
             ],
             isLoading: false,
+            endOfPosts: newLoadedPosts.length === 0,
         }));
     }
 
     render() {
-        const { posts, isLoading } = this.state;
+        const { posts, isLoading, endOfPosts } = this.state;
         const postComponents = posts.map((post) => {
             const mediaComponents = post.media_urls
                 .map(url => (
@@ -93,13 +95,21 @@ class PostList extends React.PureComponent {
         return (
             <main>
                 { postComponents }
-                <button
-                    type="button"
-                    disabled={isLoading}
-                    onClick={this.loadMorePosts}
-                >
-                    Load More
-                </button>
+                <div className="post-list__load-more-container">
+                    { !endOfPosts && (
+                        <button
+                            type="button"
+                            disabled={isLoading}
+                            onClick={this.loadMorePosts}
+                            className="button button--load-more"
+                        >
+                            Load More
+                        </button>
+                    )}
+                    { endOfPosts && (
+                        <p className="post-list__no-more-remarks">Sorry, No more posts available.</p>
+                    )}
+                </div>
             </main>
         );
     }

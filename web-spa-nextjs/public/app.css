@@ -1,5 +1,10 @@
 /* TODO use scss/css in js */
 
+main {
+    width: 1024px;
+    margin: 0 auto;
+}
+
 .nav__list-container {
     text-align: center;
 }
@@ -11,10 +16,6 @@
     background-color: yellow;
 }
 
-main {
-    width: 1024px;
-    margin: 0 auto;
-}
 .post__title-row {
     display: flex;
     justify-content: space-between;
@@ -54,4 +55,18 @@ main {
     max-width: 320px;
     margin: 0 auto;
     display: block;
+}
+
+.post-list__load-more-container {
+    margin: 50px auto;
+}
+.post-list__no-more-remarks {
+    font-size: 36px;
+    text-align: center;
+    color: gray;
+}
+.button--load-more {
+    font-size: 36px;
+    display: block;
+    margin: 0 auto;
 }
