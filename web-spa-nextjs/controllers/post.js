@@ -34,8 +34,8 @@ const getPosts = async (sortType = 'recent', page = 1) => {
                         type: 'number',
                         script: {
                             lang: 'painless',
-                            // log(likeCount) + ((time_diff in second)/45000)
-                            source: 'Math.log10(doc["like_count"].value) + ((new Date().getTime()) - (doc["taken_at"].value.millis)) / 45000000',
+                            // log(likeCount) + ((time_diff in ms)/45000000)
+                            source: 'Math.log10(doc["like_count"].value) + (doc["taken_at"].value.millis - 1134028003000L) / 45000000',
                         },
                         order: 'desc',
                     },
