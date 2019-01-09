@@ -15,6 +15,7 @@ class HomePage extends React.PureComponent {
                 <Head>
                     <title>My Instagram Feed</title>
                     <link rel="stylesheet" href="/app.css" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 </Head>
                 <Header activeSortType={sortType} />
                 <PostList
