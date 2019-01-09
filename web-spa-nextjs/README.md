@@ -21,7 +21,11 @@ docker-compose run --rm web_spa_nextjs node elasticsearch/seed/import.js
 
 #### Test
 ```bash
+# Run linter
 docker-compose run --rm web_spa_nextjs sh -c "yarn --production=false && npm run lint"
+
+# Test
+# TODO
 ```
 
 #### Hot Ranking System reference
