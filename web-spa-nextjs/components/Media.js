@@ -26,7 +26,12 @@ const Media = ({ url }) => {
             />
         );
     }
-    return <p>UNKNOWN MEDIA TYPE</p>;
+    return (
+        <p>
+            UNKNOWN MEDIA TYPE:
+            { url }
+        </p>
+    );
 };
 
 Media.propTypes = {
