@@ -1,2 +1,2 @@
-*.jpg
-*.mp4
+public/resources/**
+node_modules

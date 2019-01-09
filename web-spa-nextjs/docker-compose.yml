@@ -6,6 +6,7 @@ services:
     build: .
     command: sh -c "yarn --frozen-lockfile && yarn dev"
     environment:
+      - "API_PREFIX=http://localhost:3000/api/"
       - "ES_CLIENT_URL=http://elastic:changeme@elasticsearch:9200"
     ports:
       - '3000:3000'

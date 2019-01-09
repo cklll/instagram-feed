@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-
-const API_PREFIX = 'http://localhost:3000/api/';
+import getConfig from 'next/config';
 
 // eslint-disable-next-line no-underscore-dangle
 const _parseResponse = async (response) => {
@@ -47,6 +46,10 @@ const _parseParamsToQueryString = (params) => {
 
 // eslint-disable-next-line no-underscore-dangle
 const _req = async (method, url, params = {}) => {
+    // TODO not clean
+    // server and client sides
+    const API_PREFIX = process.env.API_PREFIX || getConfig().publicRuntimeConfig.API_PREFIX;
+
     const reqUrl = (method === 'GET')
         ? API_PREFIX + url + _parseParamsToQueryString(params)
         : API_PREFIX + url;

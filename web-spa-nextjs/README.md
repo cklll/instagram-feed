@@ -28,11 +28,14 @@ docker-compose run --rm web_spa_nextjs sh -c "yarn --production=false && npm run
 # TODO
 ```
 
-## Heroku Deployment
+#### Heroku Deployment
 ```bash
-cd .. # Run git command at top-level dir
-git subtree push --prefix web-spa-nextjs heroku master
+heroku container:push web
+heroku container:release web
 ```
+
+#### Demo Site
+https://instagram-feed.chankinlong.com/
 
 #### Hot Ranking System reference
 * https://www.reddit.com/r/explainlikeimfive/comments/1u0q4s/eli5_difference_between_best_hot_and_top_on_reddit/
