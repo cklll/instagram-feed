@@ -88,3 +88,4 @@ typings/
 
 *.jpg
 *.mp4
+*/seed/*.json

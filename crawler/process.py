@@ -1,6 +1,7 @@
 import json
+import sys
 
-def run():
+def run(media_url_prefix, media_url_postfix):
     FILE_DIR = './data'
     INPUT_FILENAMES = [
         '9gag.json',
@@ -19,7 +20,7 @@ def run():
                 media_urls = []
                 for url in post_data['urls']:
                     filename_from_url = url.split('?')[0].split('/')[-1]
-                    file_path = f'/resources/instagram/{filename_from_url}'
+                    file_path = f'{media_url_prefix}{filename_from_url}{media_url_postfix}'
                     media_urls.append(file_path)
 
                 processed_data.append({
@@ -39,4 +40,6 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    media_url_prefix = sys.argv[1]
+    media_url_postfix = sys.argv[2]
+    run(media_url_prefix=media_url_prefix, media_url_postfix=media_url_postfix)
