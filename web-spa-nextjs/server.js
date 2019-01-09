@@ -9,6 +9,7 @@ const handle = app.getRequestHandler();
 
 app.prepare()
     .then(() => {
+        const port = process.env.PORT || 3000;
         const server = express();
         server.use(express.static('public'));
 
@@ -19,12 +20,12 @@ app.prepare()
 
         server.get('*', (req, res) => handle(req, res));
 
-        server.listen(3000, (err) => {
+        server.listen(port, (err) => {
             if (err) {
                 throw err;
             }
             // eslint-disable-next-line no-console
-            console.log('> Ready on http://localhost:3000');
+            console.log(`> Ready on http://localhost:${port}`);
         });
     })
     .catch((ex) => {
