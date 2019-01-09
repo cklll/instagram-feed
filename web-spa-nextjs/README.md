@@ -33,6 +33,16 @@ docker-compose run --rm web_spa_nextjs sh -c "yarn --production=false && npm run
 * https://github.com/reddit-archive/reddit/blob/753b17407e9a9dca09558526805922de24133d53/r2/r2/lib/db/_sorts.pyx#L47
 
 
+## Technical choice / decision
+* Node.js with ExpressJs
+    * I am most familiar with it
+* Next.js
+    * Provide server-side rendering which can make SEO easier, and more importantly, sharable as the meta tag is generated in the server
+    * I am most familiar with React
+* Docker
+    * To provide an isolated environment
+    * Make deployment easier
+
 #### TODO
 * Demo site
 * Automated tests (route tests, UI tests)
