@@ -17,11 +17,11 @@ Copy the crawled data
 ```bash
 cp ../crawler/data/processed/data.json elasticsearch/seed/
 # this will remove the existing post index and import the seed data
-docker-compose run web_spa_nextjs node elasticsearch/seed/import.js
+docker-compose run --rm web_spa_nextjs node elasticsearch/seed/import.js
 
 #### Test
 ```bash
-docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint"
+docker-compose run --rm web_spa_nextjs sh -c "yarn --production=false && npm run lint"
 ```
 
 #### Hot Ranking System reference
@@ -30,6 +30,9 @@ docker-compose run web_spa_nextjs sh -c "yarn --production=false && npm run lint
 
 
 #### TODO
+* Demo site
+* Automated tests (route tests, UI tests)
+* TODO marked in commented code files
 * UI (e.g. sticky header, album)
 * Production build, currently `yarn install` is using development config and `next build` is not used to optimized
 * Use css in js or sass, include normalize.css, bootstrap, etc

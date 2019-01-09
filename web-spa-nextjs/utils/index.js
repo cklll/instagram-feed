@@ -1,4 +1,6 @@
 const getMediaType = (url) => {
+    // TODO should check with .mp4 (with dot)
+    // should be case insensitive
     if (url.endsWith('mp4')) {
         return 'MP4';
     }
