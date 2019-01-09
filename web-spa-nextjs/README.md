@@ -28,6 +28,12 @@ docker-compose run --rm web_spa_nextjs sh -c "yarn --production=false && npm run
 # TODO
 ```
 
+## Heroku Deployment
+```bash
+cd .. # Run git command at top-level dir
+git subtree push --prefix web-spa-nextjs heroku master
+```
+
 #### Hot Ranking System reference
 * https://www.reddit.com/r/explainlikeimfive/comments/1u0q4s/eli5_difference_between_best_hot_and_top_on_reddit/
 * https://github.com/reddit-archive/reddit/blob/753b17407e9a9dca09558526805922de24133d53/r2/r2/lib/db/_sorts.pyx#L47
