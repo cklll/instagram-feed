@@ -27,12 +27,17 @@ mv data/*.mp4 ../web-spa-nextjs/public/resources/instagram/
 #### Process crawled data
 ```bash
 docker run -it instagram-crawler /bin/bash
-python process.py
+python process.py "/resources/instagram/" "" # see below remarks
 
 # open a new terminal in host machine
 docker ps # get container id
 docker cp <CONTAINER_ID>:/usr/src/instagram-feed/crawler/data/processed/data.json ./data/processed/
 ```
+
+**Remarks**: first argument `"/resources/instagram/"` is the media url prefix and second argument is postfix.
+* Run the above line can make local development works.
+* If the file is stored somewhere else such as Firebase, use `python process.py "https://firebasestorage.googleapis.com/v0/b/instagra-feed.appspot.com/o/" "?alt=media"`
+
 
 #### TODO
 * Automate crawler
